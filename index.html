@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            margin-top: 200px;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        p {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .rastreio-order { 
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .tracking { 
+            color: blueviolet;
+        }
+
+       
+.arrow {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  margin-left:-20px;
+}
+.arrow:before,
+.arrow:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -24px;
+  width: 30px;
+  height: 7px;
+  border-radius: 10px;
+  display: block;
+  background: #191919;
+  transform:rotate(45deg);
+  -webkit-transform:rotate(45deg); 
+}
+.arrow:after{
+  right: inherit;
+  left: -24px;
+  transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg); 
+}
+ 
+.animated{
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s both infinite;
+}
+ 
+ 
+@-webkit-keyframes bounce {
+	0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+ 
+@-moz-keyframes bounce {
+	0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+ 
+@-o-keyframes bounce {
+	0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+@keyframes bounce {
+	0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao <span class="tracking">Rastreamento de Pedido 🚛</span></h1>
+    <p>Insira aqui abaixo o seu código de rastreio oficial e acompanhe todo o andamento do seu pedido.</p>
+    <div class="rastreio-order">
+        <div id="ordertracker-widget"></div>
+    <script src="https://www.ordertracker.com/sdk.js"></script>
+    <script>
+        Ordertracker({
+            "id": "65ce89936d58b9065d1b24fa",
+
+        }).render('#ordertracker-widget')
+    </script>
+    </div>
+
+    <div class="arrow animated"></div>
+</body>
+</html>
